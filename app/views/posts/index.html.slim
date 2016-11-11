@@ -1,0 +1,14 @@
+= will_paginate @posts
+div.center
+	ul
+		- @posts.each do |post|
+			li = p 'Title: ' + post.title
+			li = p 'Body: ' + post.content
+
+			- if logged_in?
+				li = p 'by ' + post.user.name
+			- else
+				li Please log in to view this name
+			<hr />
+= will_paginate @posts
+

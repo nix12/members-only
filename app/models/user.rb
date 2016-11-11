@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
 										format: { with: VALID_EMAIL_REGEX }
 	validates :password, presence: true, length: { minimum: 6 }
 	has_secure_password
+
+	has_many :posts
 end
